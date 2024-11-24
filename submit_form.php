@@ -1,10 +1,11 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Database configuration
-    $servername = "localhost";
-    $db_username = "root@localhost"; 
-    $db_password = " "; 
-    $dbname = "offres_en_or"; 
+
+    // $servername = "localhost";
+    // $db_username = "root@localhost"; 
+    // $db_password = " "; 
+    // $dbname = "offres_en_or"; 
 
     // Email settings
     $to_email = "admin1@offresenor.net"; 
@@ -18,6 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_email = $_POST['email'];
     $user_message = $_POST['msg'];
     $recaptcha_response = $_POST['g-recaptcha-response'];
+
+
+    echo "<p><strong>Name:</strong> $user_name</p>";
 
     // reCAPTCHA secret key
     $recaptcha_secret = "6Ld6_GgqAAAAAIKW2dhDvgSL1ugo7XQT5p9NyPKf";
