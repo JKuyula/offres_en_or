@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+       <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <title>Offres En Or</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>Offres En Or </h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Acceuil</a></li>
+          <li class="dropdown">
+            <a href="#">Collection</a>
+            <ul class="dropdown-content">
+              <li><a href="cars.html">Véhicules</a></li>
+              <li><a href="houses.html">Maisons</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <body>
+
+        <div class="car-detail">
+          <h1>Toyota Camry - 2022</h1>
+      
+          <!-- Main image and thumbnails -->
+          <div class="car-images">
+            <div class="main-image">
+              <img id="bigImage" src="images/Camry.png" alt="Toyota Camry" />
+            </div>
+            <div class="thumbnail-gallery">
+              <img src="images/Camry.png" alt="Toyota Camry Thumbnail" onclick="showImage(this)">
+              <img src="images/Camry-side.png" alt="Toyota Camry Side View" onclick="showImage(this)">
+              <img src="images/Camry-interior.png" alt="Toyota Camry Interior" onclick="showImage(this)">
+            </div>
+          </div>
+      
+          <div class="car-info">
+            <h2>Car Details</h2>
+            <table>
+              <tr>
+                <th>Description</th>
+                <td>The 2022 Toyota Camry offers a balanced blend of performance, comfort, and technology. Equipped with a gasoline engine and advanced safety features, this car is perfect for both city driving and long road trips.</td>
+              </tr>
+              <tr>
+                <th>Price</th>
+                <td>$25,000</td>
+              </tr>
+              <tr>
+                <th>Mileage</th>
+                <td>30,000 km</td>
+              </tr>
+              <tr>
+                <th>Engine Type</th>
+                <td>Gasoline</td>
+              </tr>
+              <tr>
+                <th>Year</th>
+                <td>2022</td>
+              </tr>
+            </table>
+          </div>
+      
+          <a href="cars.html" class="btn btn-primary">Back to Listing</a>
+        </div>
+      
+        <!-- Lightbox for enlarged images -->
+        <div id="lightbox" class="lightbox">
+          <span class="close" onclick="closeLightbox()">&times;</span>
+          <img class="lightbox-content" id="lightboxImage">
+        </div>
+      
+        <script>
+          function showImage(imgElement) {
+            var bigImage = document.getElementById("bigImage");
+            bigImage.src = imgElement.src;
+          }
+      
+          function openLightbox() {
+            document.getElementById("lightbox").style.display = "block";
+            document.getElementById("lightboxImage").src = document.getElementById("bigImage").src;
+          }
+      
+          function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+          }
+      
+          document.getElementById("bigImage").onclick = openLightbox;
+        </script>
+
+        <div class="contact-container">
+            <div class="phone-number">
+                <button type="button" class="button" id="showNumberButton">Show Number 📞</button>
+                <span id="phoneNumber" style="display:none;">000-000-0000</span>
+            </div>
+            <a href="https://wa.me/0000000000" target="_blank" class="whatsapp" id="whatsappLink">
+                <i class="fab fa-whatsapp"></i>&nbsp;Contact on WhatsApp
+            </a>
+        </div>
+        <script>
+            document.getElementById('showNumberButton').addEventListener('click', function() {
+                const phoneNumber = document.getElementById('phoneNumber');
+                const showNumberButton = document.getElementById('showNumberButton');
+                
+                // Toggle the visibility of the phone number
+                if (phoneNumber.style.display === 'none') {
+                    phoneNumber.style.display = 'inline';  // Show the phone number
+                    showNumberButton.textContent = 'Hide Number 📞'; // Change button text
+                } else {
+                    phoneNumber.style.display = 'none';  // Hide the phone number
+                    showNumberButton.textContent = 'Show Number 📞'; // Reset button text
+                }
+            });
+        </script>
+        
+        <section>
+            <!-- Contact Form Section -->
+             <section id="contact">
+                <div class="contact-container container">
+                    <div class="contact-img">
+                        <img src="images/email.jpg" alt="" />
+                    </div>
+                    <form class="form-container" action="#" method="POST">
+                        <h3>Contact Car Corner</h3>
+                        <input type="text" name= "username" placeholder="Your Name" required/>
+                        <input type="email" name="email" placeholder="E-Mail" required/>
+                        <input type="tel" name="mobile" placeholder="Mobile number" required>
+                        <select type="area" name="area" required>
+                            <option value="">Area</option>
+                            <option value="area1">Lubumbashi</option>
+                            <option value="area2">Likasi</option>
+                            <option value="area3">Kolwezi</option>
+                        </select>
+                          
+                        <textarea name="msg" placeholder="Type Your Message"></textarea>
+                        <button type="submit" class="btn btn-primary" name="submit" >Message the Dealer</button>
+                    </form>   
+                </div>
+        </section>
+    
+
+        <footer>
+            <p>&copy; 2024 Offres En Or </p>
+        </footer>
+    </body>    
+</html>
+
